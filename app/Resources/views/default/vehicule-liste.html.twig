@@ -1,0 +1,76 @@
+<div class="col-lg-9 col-sm-8 col-xs-12">
+    <div class="b-items__cars">
+        {% for vehicle in vehicles %}
+        <div class="b-items__cars-one wow zoomInUp" data-wow-delay="0.5s">
+            <div class="b-items__cars-one-img">
+                <a href="{{ path('details_car') }}"><img src="{{ asset('uploads/' ~ vehicle.images[0]) }}" alt='toyota'/></a>
+
+            </div>
+            <div class="b-items__cars-one-info">
+                <form class="b-items__cars-one-info-header s-lineDownLeft">
+                    <h2><a href="{{ path('details_car', { id: vehicle.id }) }}">{{ vehicle.brand.title }}  {{ vehicle.model }}</a></h2>
+                    <input type="checkbox" name="check1" id='check1'/>
+                    <label for="check1" class="b-items__cars-one-img-check"><span class="fa fa-check"></span></label>
+                </form>
+                <div class="row s-noRightMargin">
+                    <div class="col-md-9 col-xs-12">
+                        <div class="m-width row m-smallPadding">
+                            <div class="col-xs-6">
+                                <div class="row m-smallPadding">
+                                    <div class="col-xs-6">
+                                        <span class="b-items__cars-one-info-title">Véhicule type:</span>
+                                        <span class="b-items__cars-one-info-title">Kilométrage:</span>
+                                        <span class="b-items__cars-one-info-title">Transmission:</span>
+
+
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <span class="b-items__cars-one-info-value">{{ vehicle.type.title }}</span>
+                                        <span class="b-items__cars-one-info-value">{{ vehicle.kilometers }}</span>
+                                        <span class="b-items__cars-one-info-value">{{ vehicle.transmission.title }}</span>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="row m-smallPadding">
+                                    <div class="col-xs-4">
+                                        <span class="b-items__cars-one-info-title">Année:</span>
+                                        <span class="b-items__cars-one-info-title">Pays:</span>
+                                        <span class="b-items__cars-one-info-title">Etat:</span>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <span class="b-items__cars-one-info-title">{{  vehicle.year }}</span>
+                                        <span class="b-items__cars-one-info-title">{{  vehicle.location }}</span>
+                                        <span class="b-items__cars-one-info-title">{{  vehicle.state.title }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                        <div class="b-items__cars-one-info-price">
+                            <div class="pull-right">
+                                <h3>Prix:</h3>
+                                <h4>{{ vehicle.price| number_format(0, ',', ' ')  }}</h4>
+                            </div>
+                            <a href="{{ path('details_car') }}" class="btn m-btn">Plus d'infos<span class="fa fa-angle-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="b-items__pagination wow zoomInUp" data-wow-delay="0.5s">
+        <div class="b-items__pagination-main">
+            <a href="#" class="m-left"><span class="fa fa-angle-left"></span></a>
+            <span class="m-active"><a href="#">1</a></span>
+            <span><a href="#">2</a></span>
+            <span><a href="#">3</a></span>
+            <span><a href="#">4</a></span>
+            <a href="#" class="m-right"><span class="fa fa-angle-right"></span></a>
+        </div>
+    </div>
+</div>

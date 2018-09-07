@@ -1,0 +1,143 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <section class="b-slider">
+        <div id="carousel" class="slide carousel carousel-fade">
+            <div class="carousel-inner">
+                {% for vehicle in vehicles %}
+                    <div class="item {% if loop.first %} active {% endif %}">
+
+                        {% set image = vehicle.images is empty ? 'default.jpg' : vehicle.images[0] %}
+                    <img src="{{ asset('uploads/' ~ image ) }}" alt="sliderImg" />
+                    <div class="container">
+                        <div class="carousel-caption b-slider__info">
+                            <h3>Touvez un véhicule</h3>
+                            <h2>{{ vehicle.brand.title }} {{ vehicle.model }}</h2>
+                            <p>Model {{ vehicle.year }} <span>{{ vehicle.price| number_format(0, ',', ' ') }} CFA</span></p>
+                            <a class="btn m-btn" href="{{ path('details_car', { id: vehicle.id }) }}">Voir details<span class="fa fa-angle-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            <a class="carousel-control right" href="#carousel" data-slide="next">
+                <span class="fa fa-angle-right m-control-right"></span>
+            </a>
+            <a class="carousel-control left" href="#carousel" data-slide="prev">
+                <span class="fa fa-angle-left m-control-left"></span>
+            </a>
+        </div>
+    </section><!--b-slider-->
+
+    <section class="b-search">
+        <div class="container">
+            <h1 class="">VOUS SAVEZ CE QUE VOUS VOULEZ! FAITES UNE RECHERCHE PAR ICI </h1>
+            <div class="b-search__main ">
+                <h4>TYPE DE VEHICULE</h4>
+                {{ render(controller('AppBundle\\Controller\\DefaultController:vehicleSearchAction')) }}
+            </div>
+        </div>
+    </section><!--b-search-->
+
+
+    <section class="b-featured">
+        <div class="container">
+            <h2 class="s-title " data-wow-delay="0.3s">Véhicules récents</h2>
+            <div id="carousel-small" class="owl-carousel enable-owl-carousel" data-items="4" data-navigation="true" data-auto-play="true" data-stop-on-hover="true" data-items-desktop="4" data-items-desktop-small="4" data-items-tablet="3" data-items-tablet-small="2">
+                {% for vehicle in vehicles %}
+                    <div>
+                        <div class="b-featured__item " data-wow-delay="0.3s">
+                            <a href="#">
+                                <img src="{{ asset('media/186x113/mers.jpg') }}" alt="mers" />
+                                <span class="m-premium"></span>
+                            </a>
+                            <div class="b-featured__item-price">
+                                {{ vehicle.price | number_format(0, ',', ' ') }} FCFA
+                            </div>
+                            {#<div class="clearfix"></div>#}
+                            <h5><a href="#">{{ vehicle.brand.title }}  {{ vehicle.model }}</a></h5>
+                            <div class="b-featured__item-count"><span class="fa fa-tachometer"></span></div>
+                            <div class="b-featured__item-links">
+                                <a href="#">{{ vehicle.state.title }}</a>
+                                <a href="#">{{ vehicle.year }}</a>
+                                <a href="#">{{ vehicle.Transmission.title }}</a>
+                                <a href="#">{{ vehicle.exteriorColour }}</a>
+                                <a href="#">{{ vehicle.Energy.title }}</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section><!--b-featured-->
+
+     <section class="b-asks">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-10 col-sm-offset-1 col-md-offset-0 col-xs-12">
+                    <div class="b-asks__first ">
+                        <div class="b-asks__first-circle">
+                            <span class="fa fa-search"></span>
+                        </div>
+                        <div class="b-asks__first-info">
+                            <h2>ACHETER SUR <a href="https://www.mobile.de/">MOBILE.DE</a>
+                                et <a href="https://www.autoscout24.fr/">AUTOSCOUT24</a></h2>
+                            <p> Vous pouvez choisir un véhicule sur les sites autoscout24.fr et mobile.de,
+                                nous nous chargerons de verifier la disponible du véhicule et de garantir son état.</p>
+                        </div>
+                        <div class="b-asks__first-arrow">
+                            <a href="#"><span class="fa fa-angle-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+                {#<div class="col-md-6 col-sm-10 col-sm-offset-1 col-xs-12 col-md-offset-0">#}
+                    {#<div class="b-asks__first m-second wow zoomInRight" data-wow-delay="0.3s">#}
+                        {#<div class="b-asks__first-circle">#}
+                            {#<span class="fa fa-usd"></span>#}
+                        {#</div>#}
+                        {#<div class="b-asks__first-info">#}
+                            {#<h2>DO YOU WANT TO SELL A CAR?</h2>#}
+                            {#<p>Search Our Inventory With Thousands Of Cars  And More#}
+                                {#Cars Are Adding On Daily Basis</p>#}
+                        {#</div>#}
+                        {#<div class="b-asks__first-arrow">#}
+                            {#<a href="#"><span class="fa fa-angle-right"></span></a>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            </div>
+        </div>
+    </section><!--b-asks-->
+
+
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{{ asset('js/jquery.mousewheel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.easing.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.flexslider.js') }}"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+
+            var sliderPrice =  $( "#slider-price" );
+            sliderPrice.slider({
+                range: true,
+                min: 0,
+                step: 10000,
+                max: 500000000,
+                values: [ 0, 30000000 ],
+                slide: function( event, ui ) {
+                    $( "#appbundle_vehiclesearch_priceMin" ).val(  ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                }
+            });
+            $( "#appbundle_vehiclesearch_priceMin" ).val(  sliderPrice.slider( "values", 0 ) +
+                " - " + sliderPrice.slider( "values", 1 ) );
+        });
+    </script>
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/flexslider.css') }}">
+{% endblock %}
+

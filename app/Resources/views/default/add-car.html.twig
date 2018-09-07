@@ -1,0 +1,180 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+
+    <div class="b-infoBar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+
+                </div>
+            </div>
+        </div>
+    </div><!--b-infoBar-->
+
+    <div class="b-submit">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-9 col-md-8 col-sm-7 col-xs-6">
+                    <div class="b-submit__main">
+                        <header class="s-headerSubmit s-lineDownLeft ">
+                            <h2 class="">Ajouter un véhicule</h2>
+                        </header>
+                        <form class="" action="{{ url('add_car') }}" method="POST">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="b-submit__main-element ">
+                                        <label>Marque du véhicule<span>*</span></label>
+                                        <div class=''>
+                                            <input type="text" name="brand" placeholder="marque" class="m-select">
+
+                                        </div>
+                                    </div>
+                                    <div class="b-submit__main-element">
+                                        <label>Année <span>*</span></label>
+                                        <div class='s-relative'>
+
+                                                <input type="number" name="year" placeholder="Année">
+
+                                            <span class="fa fa-caret-down"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="b-submit__main-element ">
+                                        <label> Vendeur  <span>*</span></label>
+                                        <div class='s-relative'>
+
+                                            <input type="number" name="Dealer" placeholder="vendeur">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="b-submit__main-element ">
+                                        <label> Cylindre <span>*</span></label>
+                                        <div class='s-relative'>
+
+                                            <input type="number" name="Cylindre" placeholder="cylindre">
+
+                                        </div>
+                                    </div>
+                                    <div class="b-submit__main-element ">
+                                        <label>Energie <span>*</span></label>
+                                        <div class='s-relative'>
+
+                                            <input type="number" name="Energy" placeholder="energie">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="b-submit__main-element ">
+                                        <label>Model / serie <span>*</span></label>
+                                        <div class='s-relative'>
+
+                                            <input type="number" name="Model" placeholder="model/serie">
+
+                                        </div>
+                                    </div>
+                                    <div class="b-submit__main-element ">
+                                        <label>Type de véhicule<span>*</span></label>
+                                        <div class='s-relative'>
+                                            <input type="number" name="Type" placeholder="type de véhicule">
+                                        </div>
+                                    </div>
+                                    <div class="b-submit__main-element ">
+                                        <label>Nbre de portes <span>*</span></label>
+                                        <div class='s-relative'>
+
+                                            <input type="number" name="Doors" placeholder="Nbre de portes">
+
+                                        </div>
+                                    </div>
+                                    <div class="m-select">
+                                        <label>Type de transmission </label>
+                                        <div class='s-relative'>
+
+                                            <input type="number" name="Transmission" placeholder="Transmission">
+                                        </div>
+                                    </div>
+                                    {#<div class="b-submit__main-element wow zoomInUp" data-wow-delay="0.5s">#}
+                                        {#<label>Select Engine Type <span>*</span></label>#}
+                                        {#<div class='s-relative'>#}
+                                            {#<label>Année de construction</label>#}
+                                            {#<input type="number" name="year" placeholder="Année">#}
+                                            {#<span class="fa fa-caret-down"></span>#}
+                                        {#</div>#}
+                                    </div>
+
+                                    <div class="image-upload-inner">
+
+                                        <p class=" ">Vous pouvez télécharger jusqu'à 10 photos de votre véhicule ici.</p>
+                                        <label class="b-submit__main-file-label btn m-btn ">
+                                            </label>
+                                            <input type="file" class="" name="img" />
+                                            <span>Charger des images ici</span>
+                                            <div id="upload-images" class="col-md-12 dropzone m-select"></div>
+
+                                    </div>
+                                </div>
+
+                            <button type="submit" class="btn m-btn pull-right ">Sauvergarder</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--b-submit-->
+
+<link rel="stylesheet" href="{{ asset('css/add_property.css') }}">
+<link rel="stylesheet" href="{{ asset('css/dropzone.css') }}">
+<style>
+    .add-property-box.step-5 {
+        clear: both;
+    }
+</style>
+    {% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{{ asset('js/add_property.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/dropzone.js') }}"></script>
+    <script type="text/javascript">
+        Dropzone.autoDiscover = false;
+
+
+        /* Traductions de la zone d'upload d'images */
+
+        Dropzone.prototype.defaultOptions.dictDefaultMessage = "Glissez des images ici";
+        Dropzone.prototype.defaultOptions.dictFallbackMessage = "Votre navigateur ne supporte pas le glisser-deposer d'images";
+        Dropzone.prototype.defaultOptions.dictFallbackText = "SVP utilisez le formulaire d'upload ci dessous";
+        Dropzone.prototype.defaultOptions.dictFileTooBig = "L'image est trop grande ({{ '{{filesize}}' }}MiB). Taille maximum: {{ '{{maxFilesize}}' }}MiB.";
+        Dropzone.prototype.defaultOptions.dictInvalidFileType = "Vous ne pouvez pas uploader un fichier de ce type.";
+        Dropzone.prototype.defaultOptions.dictResponseError = "Le serveur a repondu avec le code suivant {{ '{{statusCode}}' }}.";
+        Dropzone.prototype.defaultOptions.dictCancelUpload = "Annuler l'upload";
+        Dropzone.prototype.defaultOptions.dictCancelUploadConfirmation = "Etes vous sur de vouloir annuler l'upload?";
+        Dropzone.prototype.defaultOptions.dictRemoveFile = "Supprimer l'image";
+        Dropzone.prototype.defaultOptions.dictMaxFilesExceeded = "Vous ne pouvez pas uploader plus d'images.";
+
+
+        /* Initialisation de la zone d'upload d'images*/
+        $("div#upload-images").dropzone({
+            url: "{{ path('upload_from_dropzone') }}",
+            addRemoveLinks: true,
+            init: function() {
+                this.on("success", function(file, result) {
+                    var form = $(file.previewElement).parents('form');
+                    form.append($('<input data-uid="'+ file.upload.uuid +'" type="hidden" name="uploads[]" value="'+ result.file +'">'));
+
+                });
+                this.on("removedfile", function (file) {
+                    console.log(file);
+                    var input = $('[data-uid="'+file.upload.uuid+'"]');
+                    $.post("{{ path('remove_upload') }}", { 'url':  input.val() }, function () {
+                        input.remove();
+                    });
+                });
+            }
+        });
+    </script>
+{% endblock %}

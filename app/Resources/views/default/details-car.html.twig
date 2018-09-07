@@ -1,0 +1,212 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <section class="b-pageHeader">
+        <div class="container">
+            <h1 class="" data-wow-delay="0.5s">Information sur le véhicule</h1>
+        </div>
+    </section><!--b-pageHeader-->
+
+    <section class="b-detail s-shadow">
+        <div class="container">
+            <header class="b-detail__head s-lineDownLeft " data-wow-delay="0.5s">
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12">
+                        <div class="b-detail__head-title">
+                            <h1>{{ vehicle.brand.title }} {{ vehicle.model }}</h1>
+                            {#<h3>Fully Redesigned Upscale Midsize Car</h3>#}
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+                        <div class="b-detail__head-price">
+                            <div class="b-detail__head-price-num">{{ vehicle.price| number_format(0, ',', ' ') }} FCFA</div>
+                            <p>Taxe & vérification incluses</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="b-detail__main">
+                <div class="row">
+                    <div class="col-md-8 col-xs-12">
+                        <div class="b-detail__main-info">
+                            <div class="b-detail__main-info-images  " data-wow-delay="0.5s">
+                                <div class="row m-smallPadding">
+                                    <div class="col-xs-10">
+                                        <ul class="b-detail__main-info-images-big bxslider enable-bx-slider" data-pager-custom="#bx-pager" data-mode="horizontal" data-pager-slide="true" data-mode-pager="vertical" data-pager-qty="5">
+                                            {% for image in vehicle.images %}
+                                                <li class="s-relative">
+
+                                                    <img class="img-responsive center-block" src="{{ asset('uploads/' ~ image ) }}" alt="" />
+                                                </li>
+                                            {% endfor %}
+
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-2 pagerSlider pagerVertical">
+                                        <div class="b-detail__main-info-images-small" id="bx-pager">
+                                            {% for image in vehicle.images %}
+                                            <a href="#" data-slide-index="{{ loop.index0 }}" class="b-detail__main-info-images-small-one">
+                                                <img class="img-responsive" src="{{ asset('upload/' ~ image ) }}" alt="nissan" />
+                                            </a>
+                                            {% endfor %}
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-detail__main-info-text  " data-wow-delay="0.5s">
+                                <div class="b-detail__main-aside-about-form-links">
+                                    <a href="#" class="j-tab m-active s-lineDownCenter" data-to='#info1'>Description</a>
+
+                                </div>
+                                <div id="info1">
+                                    <p>{{ vehicle.textDescription }}</p>
+                                </div>
+                            </div>
+                            <div class="b-detail__main-info-extra  " data-wow-delay="0.5s">
+                                <h2 class="s-titleDet">ACCESSOIRES</h2>
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <ul>
+                                            {% for security in vehicle.securities %}
+                                            <li><span class="fa fa-check"></span>{{ security.title }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <ul>
+                                            {% for comfort in vehicle.comfort %}
+                                            <li><span class="fa fa-check"></span>{{ comfort.title }}</li>
+                                            {% endfor %}
+
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <ul>
+                                            {% for medias in vehicle.medias %}
+                                            <li><span class="fa fa-check"></span>{{ vehicle.medias.title }}</li>
+                                            {% endfor %}
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <aside class="b-detail__main-aside">
+                            <div class="b-detail__main-aside-desc  " data-wow-delay="0.5s">
+                                <h2 class="s-titleDet">Caractéristiques</h2>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h4 class="b-detail__main-aside-desc-title">Marque</h4>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <p class="b-detail__main-aside-desc-value">{{ vehicle.brand.title }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h4 class="b-detail__main-aside-desc-title">Modèle</h4>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <p class="b-detail__main-aside-desc-value">{{ vehicle.model }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h4 class="b-detail__main-aside-desc-title">Kilomètres</h4>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <p class="b-detail__main-aside-desc-value">{{ vehicle.kilometers }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h4 class="b-detail__main-aside-desc-title">Type </h4>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <p class="b-detail__main-aside-desc-value">{{ vehicle.type.title }}</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h4 class="b-detail__main-aside-desc-title">Moteur</h4>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <p class="b-detail__main-aside-desc-value">{{ vehicle.cylindre }}</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h4 class="b-detail__main-aside-desc-title">Transmission</h4>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        {% for transmission in vehicle.transmission %}
+                                        <p class="b-detail__main-aside-desc-value">{{ transmission.title }}</p>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h4 class="b-detail__main-aside-desc-title">Couleur extérieure</h4>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <p class="b-detail__main-aside-desc-value">{{ vehicle.exteriorColour }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h4 class="b-detail__main-aside-desc-title">Couleur intérieure</h4>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <p class="b-detail__main-aside-desc-value">{{ vehicle.interiorColour }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h4 class="b-detail__main-aside-desc-title">Portes</h4>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <p class="b-detail__main-aside-desc-value">{{ vehicle.door }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h4 class="b-detail__main-aside-desc-title">Energie</h4>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        {% for energy in vehicle.energy %}
+                                        <p class="b-detail__main-aside-desc-value">{{ energy.title }}</p>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            {#<div class="b-detail__main-aside-about  " data-wow-delay="0.5s">#}
+                                {#<h2 class="s-titleDet">INQUIRE ABOUT THIS VEHICLE</h2>#}
+                                {#<div class="b-detail__main-aside-about-call">#}
+                                    {#<span class="fa fa-phone"></span>#}
+                                    {#<div></div>#}
+                                    {#<p>Call the seller 24/7 and they would help you.</p>#}
+                                {#</div>#}
+                                {#<div class="b-detail__main-aside-about-seller">#}
+                                    {#<p>Seller Info: <span>NissanCarDealer</span></p>#}
+                                {#</div>#}
+
+                            </div>
+
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--b-detail-->
+
+
+{% endblock %}

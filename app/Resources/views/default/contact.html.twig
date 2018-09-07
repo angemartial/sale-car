@@ -1,0 +1,90 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <section class="b-pageHeader">
+        <div class="container">
+            <h1 class=" wow zoomInLeft" data-wow-delay="0.5s">Contactez-nous</h1>
+        </div>
+    </section><!--b-pageHeader-->
+
+
+    <section class="b-contacts s-shadow">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="b-contacts__form">
+                        <header class="b-contacts__form-header s-lineDownLeft ">
+                            <h2 class="s-titleDet">Formulaire de contact</h2>
+                        </header>
+                        <p class=" " data-wow-delay="0.5s">Entrez vos commentaires via le formulaire ci-dessous et nos professionnels
+                            du service clientèle vous contacteront dès que possible.</p>
+                        <div id="success"></div>
+                        <form id="contactForm" novalidate class="s-form ">
+                            <div class="s-relative">
+                                <select name="user-topic" id="user-topic" class="m-select">
+                                    <option value="Not select">Sujet</option>
+
+                                </select>
+                                <span class="fa fa-caret-down"></span>
+                            </div>
+                            <input type="text" placeholder="Votre nom" value="" name="user-name" id="user-name" />
+                            <input type="text" placeholder="Votre email %" value="" name="user-email" id="user-email" />
+                            <input type="text" placeholder="Téléphone" value="" name="user-phone" id="user-phone" />
+                            <textarea id="user-message" name="user-message" placeholder="Entrez votre message ici"></textarea>
+                            <button type="submit" class="btn m-btn">Envoyer<span class="fa fa-angle-right"></span></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="b-contacts__address">
+
+                        <div class="b-contacts__address-info">
+                            <h2 class="s-titleDet ">Informations complémentaires</h2>
+                            <address class="b-contacts__address-info-main ">
+                                <div class="b-contacts__address-info-main-item">
+                                    <span class="fa fa-home"></span>
+                                    Adresse :<p>Abidjan Cocody angré 8ième tranche</p>
+
+                                </div>
+                                <div class="b-contacts__address-info-main-item">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 col-xs-12">
+                                            <span class="fa fa-phone"></span>
+                                            Téléphone :
+                                        </div>
+                                        <div class="col-lg-9 col-md-8 col-xs-12">
+                                            <em>+225 07 67 67 45</em>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="b-contacts__address-info-main-item">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 col-xs-12">
+                                            <span class="fa fa-envelope"></span>
+                                            Email :
+                                        </div>
+                                        <div class="col-lg-9 col-md-8 col-xs-12">
+                                            <em>info@ibohcompany</em>
+                                        </div>
+                                    </div>
+                                </div>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--b-contacts-->
+
+    {#<div class="b-map ">#}
+        {#<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=W-Xpe7AurTrL7tXe8sROgCD2phwBIWEj&width=100%&height=400&lang=en_US&sourceType=constructor"></script>#}
+    {#</div><!--b-map-->#}
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
+

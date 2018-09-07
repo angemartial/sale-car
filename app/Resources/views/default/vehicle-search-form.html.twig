@@ -1,0 +1,40 @@
+{{ form_start(form, { action: path('search_vehicle'), attr: { class: 'b-search__main-form' }   }) }}
+
+    <div class="row">
+        <div class="col-xs-12 col-md-8">
+            <div class="m-firstSelects">
+                <div class="col-xs-4">
+                    {{ form_widget(form.brand) }}
+                    <span class="fa fa-caret-down"></span>
+                    <p>Marque</p>
+                </div>
+                <div class="col-xs-4">
+                    {{ form_widget(form.model) }}
+                    <p>Model</p>
+                </div>
+                <div class="col-xs-4">
+                    {{ form_widget(form.state) }}
+                    <span class="fa fa-caret-down"></span>
+                    <p>E.G:  NEW, USED, CERTIFIED</p>
+                </div>
+            </div>
+            <div class="m-secondSelects">
+                <div class="col-xs-4">
+                    {{ form_widget(form.minYear) }}
+                </div>
+                <div class="col-xs-4">
+                    {{ form_widget(form.maxYear) }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-12 text-left s-noPadding">
+            <div class="b-search__main-form-range">
+                <label>Niveau de prix</label>
+                <div class="slider"></div>
+                {{ form_widget(form.minPrice) }}
+                {{ form_widget(form.maxPrice) }}
+            </div>
+
+        </div>
+    </div>
+{{ form_end(form, {'render_rest': false}) }}
