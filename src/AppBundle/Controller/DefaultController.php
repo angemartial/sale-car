@@ -13,6 +13,25 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends Controller
 {
+    private function clean($string){
+        return trim(strip_tags($string));
+    }
+
+    private function cleanAll(array $strings){
+
+        return array_map(function ($string)
+        {
+            if(is_array($string)){
+                return $this->cleanAll($string);
+            }elseif (is_string($string))
+            {
+                return $this->clean($string);
+            }
+            return $string;
+        }, $strings);
+
+    }
+
     /**
      * @Route("/", name="homepage")
      */
@@ -58,6 +77,42 @@ class DefaultController extends Controller
      * @Route("contactez-nous", name="contact_us")
      */
     public function contactAction(Request $request){
+
+        if($request->getMethod() === 'POST'){
+            $posts = $request->request->all();
+
+            $posts = $this->cleanAll($posts);
+            $verify = $this->verifyCaptcha($posts['g-recaptcha-response']);
+            if(false === $verify){
+                $this->addFlash('danger', 'Les robots sont bannis :) ');
+            }
+            if( $this->checkRequired($posts) && $verify){
+                $mailer = $this->get('mailer');
+                $message = 'Vous venez de recevoir un message de :'.PHP_EOL;
+
+                $message.= ( 'Nom : ' . $posts['user-name'].PHP_EOL.PHP_EOL );
+
+                $message.= ( 'Email : ' . $posts['user-email'].PHP_EOL.PHP_EOL );
+
+                $message.= ( 'Message : '.PHP_EOL.PHP_EOL );
+
+                $message.= $posts['user-message'];
+
+                $message = (new \Swift_Message('Message de contact utilisateur immobilier.ibohcompany.com'))
+                    ->setFrom(['test@ibohcompany.com' => 'Immobilier-Iboh'])
+                    ->setTo(['' => 'Eric Léonard', 'angemartialkoffi@gmail.com' => 'Ange Martial Koffi'])
+                    ->setBody($message);
+
+                $mailer->send($message);
+
+                $this->addFlash('success','Votre message a été envoyé avec succes');
+            }
+
+        }
+
+
+
+
         return $this->render('default/contact.html.twig');
     }
 
