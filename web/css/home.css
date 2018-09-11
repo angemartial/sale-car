@@ -247,11 +247,11 @@ a.m-langLink{
     width:100%;
 }
 
-.b-slider__info{
-   text-transform: uppercase;
-   margin:0 0 0 20px;
-   text-align: left;
+.b-slider__info {
+
+    text-align: left;
     top: 20%;
+    left: 17rem;
 }
 
 .b-slider__info h3{
@@ -488,7 +488,6 @@ a.m-langLink{
 }
 
 .m-firstSelects{
-    margin-bottom: 45px;
     overflow: hidden;
 }
 
@@ -1798,4 +1797,5 @@ a.m-langLink{
     -ms-appearance: none;
     appearance: none!important;
     cursor: pointer;
+    color: white;
 }

@@ -630,8 +630,9 @@ body{
     color:#555;
 }
 
-.m-home .b-search__main >h4{
-    color:#f76d2b;   
+.m-home .b-search__main >h4 {
+    color: #f76d2b;
+    font-size: 30px;
 }
 /*b-search*/
 

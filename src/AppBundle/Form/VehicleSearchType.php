@@ -63,18 +63,14 @@ class VehicleSearchType extends AbstractType
                     'placeholder' => 'Année max'
                 ]
             ])
-            ->add('minPrice', HiddenType::class, [
+            ->add('minPrice', null, [
                 "attr" => [
-                    'placeholder' => 'Prix min',
-                    'class' => 'j-min',
-                    'value' => '800 000'
+                    'placeholder' => 'Prix min'
                 ]
             ])
-            ->add('maxPrice', HiddenType::class, [
+            ->add('maxPrice', null, [
                 "attr" => [
-                    'placeholder' => 'Prix max',
-                    'class' => 'j-max',
-                    'value' => '500 000 000'
+                    'placeholder' => 'Prix max'
                 ]
             ])
 

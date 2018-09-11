@@ -1,17 +1,66 @@
 {% extends 'layout.html.twig' %}
-{% block bodyClass %} m-listingsTwo {% endblock %}
+{% block bodyClass %} m-home {% endblock %}
 {% block content %}
-    <div class="b-items">
+    <section class="b-items s-shadow">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-sm-4 col-xs-12">
+                {% for vehicle in vehicles %}
+                <div class="col-lg-9 col-sm-8 col-xs-12">
+                    <div class="b-items__cars">
+                        <div class="b-items__cars-one">
+                            <div class="b-items__cars-one-img">
+                                <img src="{{ asset('uploads/' ~ vehicle.images[0]) }}" alt='dodge'/>
+                                {#<a data-toggle="modal" data-target="#myModal" href="#" class="b-items__cars-one-img-video"><span class="fa fa-film"></span>VIDEO</a>#}
+                                {#<span class="b-items__cars-one-img-type ">PREMIUM</span>#}
+                                {#<form action="/" method="post">#}
+                                    {#<input type="checkbox" name="check1" id='check1'/>#}
+                                   {##}
+                                {#</form>#}
+                            </div>
+                            <div class="b-items__cars-one-info">
+                                <header class="b-items__cars-one-info-header s-lineDownLeft">
+                                    <h2>{{ vehicle.brand.title }} {{ vehicle.model }}</h2>
+                                    <span>{{ vehicle.price | number_format(0, ',', ' ')}} FCFA</span>
+                                </header>
+                                <p>
+                                   {{ vehicle.textDescription }}
+                                </p>
+                                <div class="b-items__cars-one-info-km">
+                                    <span class="fa fa-tachometer">{{ vehicle.kilometers }} KM</span>
+                                </div>
+                                <div class="b-items__cars-one-info-details">
+                                    <div class="b-featured__item-links">
+                                        <a href="#">Année {{ vehicle.year }}</a>
+                                        <a href="#">{{ vehicle.state.title }}</a>
+                                        <a href="#">{{ vehicle.transmission.title }}</a>
+                                        <a href="#">{{ vehicle.energy.title }}</a>
+                                    </div>
+                                    <a href="{{ path('details_car' , { id: vehicle.id }) }}" class="btn m-btn">Plus d'infos<span class="fa fa-angle-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    {#<div class="b-items__pagination wow zoomInUp" data-wow-delay="0.5s">#}
+                        {#<div class="b-items__pagination-main">#}
+                            {#<a data-toggle="modal" data-target="#myModal" href="#" class="m-left"><span class="fa fa-angle-left"></span></a>#}
+                            {#<span class="m-active"><a href="#">1</a></span>#}
+                            {#<span><a href="#">2</a></span>#}
+                            {#<span><a href="#">3</a></span>#}
+                            {#<span><a href="#">4</a></span>#}
+                            {#<a href="#" class="m-right"><span class="fa fa-angle-right"></span></a>#}
+                        {#</div>#}
+                    {#</div>#}
+                </div>
+
+                {#<div class="col-lg-3 col-sm-4 col-xs-12">#}
                     {#<aside class="b-items__aside">#}
-                        {#<h2 class="s-title wow zoomInUp" data-wow-delay="0.5s">RECHERCHE AVANCEE</h2>#}
+                        {#<h2 class="s-title wow zoomInUp" data-wow-delay="0.5s">REFINE YOUR SEARCH</h2>#}
                         {#<div class="b-items__aside-main wow zoomInUp" data-wow-delay="0.5s">#}
                             {#<form>#}
                                 {#<div class="b-items__aside-main-body">#}
                                     {#<div class="b-items__aside-main-body-item">#}
-                                        {#<label>MARQUE</label>#}
+                                        {#<label>SELECT A MAKE</label>#}
                                         {#<div>#}
                                             {#<select name="select1" class="m-select">#}
                                                 {#<option value="" selected="">Any Make</option>#}
@@ -82,81 +131,11 @@
                             {#</div>#}
                         {#</div>#}
                     {#</aside>#}
-                </div>
-                <div class="col-lg-9 col-sm-8 col-xs-12">
-                    <div class="b-items__cars">
-                        {% for vehicle in vehicles %}
-                        <div class="b-items__cars-one wow zoomInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomInUp;">
-                            <div class="b-items__cars-one-img">
-                                <img src="{{ asset('uploads/' ~ vehicle.images[0]) }}"/>
-                            </div>
-                            <div class="b-items__cars-one-info">
-                                <form class="b-items__cars-one-info-header s-lineDownLeft">
-                                    <h2>{{ vehicle.brand.title }}  {{ vehicle.model }}</h2>
-                                    <input type="checkbox" name="check1" id="check1">
-                                    <label for="check1" class="b-items__cars-one-img-check"><span class="fa fa-check"></span></label>
-                                </form>
-                                <div class="row s-noRightMargin">
-                                    <div class="col-md-9 col-xs-12">
-                                        <div class="m-width row m-smallPadding">
-                                            <div class="col-xs-6">
-                                                <div class="row m-smallPadding">
-                                                    <div class="col-xs-6">
-                                                        <span class="b-items__cars-one-info-title">Véhicule type:</span>
-                                                        <span class="b-items__cars-one-info-title">Kilométrage:</span>
-                                                        <span class="b-items__cars-one-info-title">Transmission:</span>
-                                                    </div>
-                                                    <div class="col-xs-6">
-                                                        <span class="b-items__cars-one-info-value">{{ vehicle.type.title }}</span>
-                                                        <span class="b-items__cars-one-info-value">{{ vehicle.kilometers }}</span>
-                                                        <span class="b-items__cars-one-info-value">{{ vehicle.transmission.title }}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <div class="row m-smallPadding">
-                                                    <div class="col-xs-4">
-                                                        <span class="b-items__cars-one-info-title">Année:</span>
-                                                        <span class="b-items__cars-one-info-title">Pays:</span>
-                                                        <span class="b-items__cars-one-info-title">Etat:</span>
-                                                    </div>
-                                                    <div class="col-xs-8">
-                                                        <span class="b-items__cars-one-info-title">{{  vehicle.year }}</span>
-                                                        <span class="b-items__cars-one-info-title">{{  vehicle.location }}</span>
-                                                        <span class="b-items__cars-one-info-title">{{  vehicle.state.title }}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-xs-12">
-                                        <div class="b-items__cars-one-info-price">
-                                            <div class="pull-right">
-                                                <h3>Prix:</h3>
-                                                <h4>{{ vehicle.price| number_format(0, ',', ' ')  }}</h4>
-                                            </div>
-                                            <a href="{{ path('details_car',{id: vehicle.id}) }}" class="btn m-btn">Plus d'infos<span class="fa fa-angle-right"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    <div class="b-items__pagination wow zoomInUp" data-wow-delay="0.5s">
-                        <div class="b-items__pagination-main">
-                            <a href="#" class="m-left"><span class="fa fa-angle-left"></span></a>
-                            <span class="m-active"><a href="#">1</a></span>
-                            <span><a href="#">2</a></span>
-                            <span><a href="#">3</a></span>
-                            <span><a href="#">4</a></span>
-                            <a href="#" class="m-right"><span class="fa fa-angle-right"></span></a>
-                        </div>
-                    </div>
-                </div>
+                {#</div>#}
+                {% endfor %}
             </div>
         </div>
-    </div><!--b-items-->
+    </section><!--b-items-->
 
 {% endblock %}
 
