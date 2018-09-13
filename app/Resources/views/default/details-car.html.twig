@@ -27,12 +27,15 @@
                 </div>
             </header>
             <div class="b-detail__main">
+
                 <div class="row">
+
                     <div class="col-md-8 col-xs-12">
                         <div class="b-detail__main-info">
                             <div class="b-detail__main-info-images  " data-wow-delay="0.5s">
                                 <div class="row m-smallPadding">
                                     <div class="col-xs-10">
+
                                         <ul class="b-detail__main-info-images-big bxslider enable-bx-slider" data-pager-custom="#bx-pager" data-mode="horizontal" data-pager-slide="true" data-mode-pager="vertical" data-pager-qty="5">
                                             {% for image in vehicle.images %}
                                                 <li class="s-relative">
@@ -42,17 +45,20 @@
                                             {% endfor %}
 
                                         </ul>
+
                                     </div>
+                                     {% for image in vehicle.images %}
                                     <div class="col-xs-2 pagerSlider pagerVertical">
                                         <div class="b-detail__main-info-images-small" id="bx-pager">
-                                            {% for image in vehicle.images %}
+
                                             <a href="#" data-slide-index="{{ loop.index0 }}" class="b-detail__main-info-images-small-one">
-                                                <img class="img-responsive" src="{{ asset('upload/' ~ image ) }}" alt="nissan" />
+                                                <img class="img-responsive" src="{{ asset('uploads/' ~ image ) }}" alt="" />
                                             </a>
-                                            {% endfor %}
+
 
                                         </div>
                                     </div>
+                                         {% endfor %}
                                 </div>
                             </div>
 
@@ -95,6 +101,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-4 col-xs-12">
                         <aside class="b-detail__main-aside">
                             <div class="b-detail__main-aside-desc  " data-wow-delay="0.5s">
@@ -203,6 +210,7 @@
 
                         </aside>
                     </div>
+
                 </div>
             </div>
         </div>

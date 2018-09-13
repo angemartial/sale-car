@@ -641,8 +641,12 @@ body{
     color:#fff;
 }
 
-.m-home .b-featured__item h5{
-    color:#fff;
+.m-home .b-featured__item h5 {
+    color: black;
+    position: relative;
+
+    margin: 0;
+    font-size: 1.5rem;
 }
 
 .m-home .b-featured__item > a{

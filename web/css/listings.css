@@ -21,10 +21,11 @@
     background-size: cover;
 }
 
-.b-pageHeader h1{
-    font:700 30px 'PT Sans',sans-serif;
-    float:left;
+.b-pageHeader h1 {
+    font: 700 30px 'PT Sans',sans-serif;
+    float: left;
     margin: 0;
+    color: #f76d2b;
 }
 
 .b-pageHeader__search{
@@ -316,11 +317,12 @@ select.m-select + span.fa{
     overflow: hidden;
 }
 
-.b-items__cars-one-img{
-    width:270px;
-    height:230px;
+.b-items__cars-one-img {
+    width: 270px;
+    height: 230px;
     position: relative;
-    float:left;
+    float: left;
+    overflow: hidden;
 }
 
 .b-items__cars-one{
@@ -439,7 +441,7 @@ select.m-select + span.fa{
 
 .b-items__cars-one-info-details .b-featured__item-links a{
     font-size:15px;
-    color: #ffffff;
+    color: #000;
 }
 
 .b-items__cars-one-info a.btn{

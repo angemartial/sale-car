@@ -310,8 +310,7 @@ body,
 .m-home .b-nav__list > #nav > ul > li > a,
 .m-home .b-slider__info .btn.m-btn,
 .m-home .b-slider__info a.btn:hover span,
-.m-home .b-featured .s-title,
-.m-home .b-featured__item h5 a,
+
 .m-home .b-world__item-num,
 .m-home .b-homeAuto__world > a span.fa,
 .m-home .b-count__item-circle:hover,
@@ -384,8 +383,11 @@ a.btn.m-btn.m-pay:hover,
 .b-compare__block-title > a,
 .b-items__cars-one-img-video, .b-items__cars-one-img-video:hover, .b-items__cars-one-img-video:visited, .b-items__cars-one-img-video:active,.b-items__cars-one-img-video:focus
 {
-    color:#fff;
+    color: #ffffff;
     fill:#fff;
+}
+.m-home .b-featured h2.s-title .m-home .b-featured__item h5 a{
+    color: black;
 }
 .header_top-bar{
     background-color:#3c3c3c;
