@@ -83,9 +83,9 @@ class DefaultController extends Controller
 
             $posts = $this->cleanAll($posts);
             $verify = $this->verifyCaptcha($posts['g-recaptcha-response']);
-            if(false === $verify){
-                $this->addFlash('danger', 'Les robots sont bannis :) ');
-            }
+//            if(false === $verify){
+//                $this->addFlash('danger', 'Les robots sont bannis :) ');
+//            }
             if( $this->checkRequired($posts) && $verify){
                 $mailer = $this->get('mailer');
                 $message = 'Vous venez de recevoir un message de :'.PHP_EOL;
