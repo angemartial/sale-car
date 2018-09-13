@@ -98,11 +98,12 @@ class DefaultController extends Controller
 
                 $message.= $posts['user-message'];
 
-                $message = (new \Swift_Message('Message de contact utilisateur immobilier.ibohcompany.com'))
-                    ->setFrom(['test@ibohcompany.com' => 'Immobilier-Iboh'])
-                    ->setTo(['angemartialkoffi@gmail.com' => 'Ange Martial Koffi'])
-                    ->setBody($message);
-
+                $message = (new \Swift_Message('Message de contact utilisateur auto.ibohcompany.com'))
+                    ->setFrom(['info@ibohcompany.com' => 'Auto-IBOH Company'])
+                    ->setTo(['angemartialkoffi@gmail.com' => 'Ange Martial Koffi',
+                        'eric997997@gmail.com' => 'Eric Léonard','info@ibohcompany.com' =>'Iboh Info' ])
+                    ->setBody($message)
+                    ->setReplyTo([ $posts['email'] =>  $posts['name'] ]);
                 $mailer->send($message);
 
                 $this->addFlash('success','Votre message a été envoyé avec succes');
@@ -111,6 +112,17 @@ class DefaultController extends Controller
         }
 
         return $this->render('default/contact.html.twig');
+    }
+    function checkRequired(array $posts = []){
+        $required = ['user-name', 'user-email', 'user-message', 'g-recaptcha-response'];
+
+        foreach ($required as $name ) {
+            if(false === array_key_exists($name, $posts)  || empty($posts[$name])){
+                $this->addFlash('danger', 'Veuillez remplir le champs ' .$name);
+                return false;
+            }
+        }
+        return true;
     }
 
     private function verifyCaptcha($captchaResponse){
