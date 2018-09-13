@@ -100,7 +100,7 @@ class DefaultController extends Controller
 
                 $message = (new \Swift_Message('Message de contact utilisateur immobilier.ibohcompany.com'))
                     ->setFrom(['test@ibohcompany.com' => 'Immobilier-Iboh'])
-                    ->setTo(['' => 'Eric Léonard', 'angemartialkoffi@gmail.com' => 'Ange Martial Koffi'])
+                    ->setTo(['angemartialkoffi@gmail.com' => 'Ange Martial Koffi'])
                     ->setBody($message);
 
                 $mailer->send($message);
@@ -110,10 +110,33 @@ class DefaultController extends Controller
 
         }
 
-
-
-
         return $this->render('default/contact.html.twig');
+    }
+
+    private function verifyCaptcha($captchaResponse){
+        $url = "https://www.google.com/recaptcha/api/siteverify";
+        $posts = [
+            'response' => $captchaResponse,
+            'secret' => "6LdqEXAUAAAAABrEH6vYlFlkOJDoFHoIpi13eYgb",
+            'remoteip' => $_SERVER["REMOTE_ADDR"]
+        ];
+
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $posts);
+
+        $response = curl_exec($ch);
+
+        if(curl_errno($ch)){
+            return false;
+        }
+
+
+        $result = json_decode($response, true);
+
+        return true === $result['success'];
     }
 
 
