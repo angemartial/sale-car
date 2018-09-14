@@ -46,6 +46,7 @@
     background-color: rgba(0,0,0,0.8);
     box-shadow: none;
     padding: 1rem;
+    z-index: auto;
 }
 .m-home .b-search .container {
     width: 100%;
