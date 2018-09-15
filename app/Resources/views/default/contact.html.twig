@@ -20,7 +20,7 @@
                         <p class=" " data-wow-delay="0.5s">Entrez vos commentaires via le formulaire ci-dessous et nos professionnels
                             du service clientèle vous contacteront dès que possible.</p>
                         <div id="success"></div>
-                        <form id="contactForm" novalidate class="s-form ">
+                        <form id="contactForm" method="post" action="{{ path('contact_us') }}" class="s-form ">
 
                             <input required type="text" placeholder="Votre nom"  name="user-name"  />
                             <input required type="text" placeholder="Votre email " name="user-email"  />

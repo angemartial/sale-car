@@ -26,16 +26,20 @@
 
 /* Search */
 .m-home .b-search {
-    margin-top: 0;
+    /* margin-top: 0; */
     height: 320px;
-    background: rgba(0,0,0,0.1);
+    background: transparent;
     position: absolute;
-    top: 18rem;
-    right: 10rem;
-    width: 55rem;
-    height: 30rem;
+    top: 1rem;
+    right: 1rem;
+    /* width: 55rem; */
+    /* height: 30rem; */
     /* padding-bottom: 0.1rem; */
 }
+section.b-slider {
+    position: relative;
+}
+
 .m-home .b-search .container > h1{
     text-transform: uppercase;
     font: 700 20px 'Open Sans',sans-serif;
@@ -43,10 +47,11 @@
     margin: 45px 0 40px 0;
 }
 .m-home .b-search__main {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.6);
     box-shadow: none;
     padding: 1rem;
     z-index: auto;
+    max-width: 500px;
 }
 .m-home .b-search .container {
     width: 100%;
@@ -54,9 +59,7 @@
 .b-search__main {
     margin-top: 0;
 }
-.b-search__main-form input {
-    margin-bottom: 2rem;
-}
+
 .b-search .btn {
     background: #f76d2b !important;
     color: white !important;
@@ -126,17 +129,22 @@
 .m-home .b-featured__item > a{
     margin-bottom: 0;
     height:125px;
+    overflow: hidden;
 }
 
 .m-home .b-featured__item > a img {
     margin-top: 10px;
-    width: 100%;
+    width: auto;
     height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .b-items__cars-one-img > img {
     width: 100%;
     margin-top: 10px;
-    height: 100%;
+    height: auto;
 }
 .m-home .b-featured__item h5.a{
     color: #000;
@@ -540,4 +548,16 @@ header.header_top-bar a:hover {
     border-radius: 100%;
     font-size:20px;
     padding: 2px;
+}
+.carousel-fade .item {
+    height: 400px;
+}
+.b-search h2 {
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.find_home-box .b-search__main-form p {
+    color: white;
+    margin-bottom: 2rem;
 }

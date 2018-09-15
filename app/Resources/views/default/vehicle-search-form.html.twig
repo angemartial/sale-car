@@ -15,19 +15,21 @@
                 <div class="col-xs-6">
                     {{ form_widget(form.state) }}
                     <span class="fa fa-caret-down"></span>
+                    <p>Etat</p>
                 </div>
                 <div class="col-xs-6">
                     {{ form_widget(form.minYear) }}
+                    <p>Année</p>
                 </div>
-                <div class="col-xs-6">
-                    {{ form_widget(form.maxYear) }}
-                </div>
-                <div class="col-xs-6">
-                    {{ form_widget(form.minPrice) }}
-                </div>
-                <div class="col-xs-6">
-                    {{ form_widget(form.maxPrice) }}
-                </div>
+                {#<div class="col-xs-6">#}
+                    {#{{ form_widget(form.maxYear) }}#}
+                {#</div>#}
+                {#<div class="col-xs-6">#}
+                    {#{{ form_widget(form.minPrice) }}#}
+                {#</div>#}
+                {#<div class="col-xs-6">#}
+                    {#{{ form_widget(form.maxPrice) }}#}
+                {#</div>#}
             </div>
 
             <div class="find-home-item">

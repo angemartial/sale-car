@@ -7,10 +7,10 @@
             <div class="row">
 
                 <div class="col-lg-9 col-sm-8 col-xs-12">
-                    {% for vehicle in vehicles %}
-                    <div class="b-items__cars">
-                        <div class="b-items__cars-one">
 
+                    <div class="b-items__cars">
+                        {% for vehicle in vehicles %}
+                        <div class="b-items__cars-one">
                             <div class="b-items__cars-one-img">
                                 <img src="{{ asset('uploads/' ~ vehicle.images[0]) }}" alt='dodge'/>
                                 {#<a data-toggle="modal" data-target="#myModal" href="#" class="b-items__cars-one-img-video"><span class="fa fa-film"></span>VIDEO</a>#}
@@ -42,7 +42,6 @@
                                     <a href="{{ path('details_car' , { id: vehicle.id }) }}" class="btn m-btn">Plus d'infos<span class="fa fa-angle-right"></span></a>
                                 </div>
                             </div>
-
                         </div>
                         {% endfor %}
                     </div>

@@ -104,7 +104,7 @@ class DefaultController extends Controller
                     ->setTo(['angemartialkoffi@gmail.com' => 'Ange Martial Koffi',
                         'eric997997@gmail.com' => 'Eric Léonard','info@ibohcompany.com' =>'Iboh Info' ])
                     ->setBody($message)
-                    ->setReplyTo([ $posts['email'] =>  $posts['name'] ]);
+                    ->setReplyTo([ $posts['user-email'] =>  $posts['user-name'] ]);
                 $mailer->send($message);
 
                 $this->addFlash('success','Votre message a été envoyé avec succes');

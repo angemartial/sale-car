@@ -371,12 +371,21 @@ a.m-langLink{
 
 .b-search__main{
     text-align: center;
-    height:480px;
+    /*height:480px;*/
     margin-top: -125px;
     padding: 35px 60px 50px 60px;
     z-index: 1000;
     position: relative;
     box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+.find-home-item {
+    margin-bottom: 1rem;
+}
+.find_home-box option {
+    color: initial;
+}
+.carousel-control{
+    width: auto;
 }
 
 .b-search__main-title{
@@ -482,7 +491,6 @@ a.m-langLink{
    text-align: left;
    font:400 10px 'Open Sans',sans-serif;
    padding-left: 10px;
-   margin-top: 10px;
    margin-bottom: 0;
    text-transform: uppercase;
 }

@@ -319,7 +319,7 @@ select.m-select + span.fa{
 
 .b-items__cars-one-img {
     width: 270px;
-    height: 230px;
+    height: auto;
     position: relative;
     float: left;
     overflow: hidden;
