@@ -314,8 +314,8 @@ body{
     background: #f5f5f5;
 }
 
-.b-asks__first{
-    background: #555;
+.b-asks__first {
+    background: #f76d2b;
 }
 
 .b-asks__first:hover .b-asks__first-circle{
@@ -343,10 +343,9 @@ body{
     color:#707070;
 }
 
-.b-asks__first.m-second{
-    background: #555555;
+.b-asks__first.m-second {
+    background: #f76d2b;
 }
-
 .b-asks__call{
     color:#525252;
 }

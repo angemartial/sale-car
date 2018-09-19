@@ -274,7 +274,7 @@ class DefaultController extends Controller
             $result = $repository->search($search);
 
             return $this->render('default/vehicle.html.twig',
-                ['vehicle' => $result,'page' => 1,'max' => 12, 'isSearch' => true]);
+                ['vehicles' => $result,'page' => 1,'max' => 12, 'isSearch' => true]);
         }
         return $this->render('default/search-vehicle.html.twig',
             [

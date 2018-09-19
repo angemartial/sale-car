@@ -2,6 +2,7 @@
 
 namespace AppBundle\Repository;
 use AppBundle\Extra\VehicleSearch;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 
 /**
@@ -28,7 +29,7 @@ class VehicleRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('published', true)
             ->setMaxResults($max);
 
-        return new paginator($qb);
+        return new Paginator($qb);
     }
 
     public function search(VehicleSearch $search){
@@ -68,5 +69,6 @@ class VehicleRepository extends \Doctrine\ORM\EntityRepository
                 ->setParameter('minYear', $search->getMinYear());
         }
 
+        return new Paginator($qb);
     }
 }

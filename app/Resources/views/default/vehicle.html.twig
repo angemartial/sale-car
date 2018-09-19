@@ -2,6 +2,9 @@
 {% block bodyClass %} m-home {% endblock %}
 {% block content %}
     <section class="b-items s-shadow">
+        {% if isSearch %}
+            <h2 class="container pb-20">Resultat de la recherche</h2>
+        {% endif %}
         <div class="container">
 
             <div class="row">
@@ -42,6 +45,14 @@
                                     <a href="{{ path('details_car' , { id: vehicle.id }) }}" class="btn m-btn">Plus d'infos<span class="fa fa-angle-right"></span></a>
                                 </div>
                             </div>
+                        {% else %}
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <p>
+                                    Aucun véhicule ne correspond
+                                </p>
+
+                            </div>
+
                         </div>
                         {% endfor %}
                     </div>
@@ -60,12 +71,15 @@
 
                 {#<div class="col-lg-3 col-sm-4 col-xs-12">#}
                     {#<aside class="b-items__aside">#}
-                        {#<h2 class="s-title wow zoomInUp" data-wow-delay="0.5s">REFINE YOUR SEARCH</h2>#}
+                        {#<h2 class="s-title wow zoomInUp" data-wow-delay="0.5s">FILTRE DE RECHERCHE</h2>#}
+
                         {#<div class="b-items__aside-main wow zoomInUp" data-wow-delay="0.5s">#}
+
                             {#<form>#}
                                 {#<div class="b-items__aside-main-body">#}
+
                                     {#<div class="b-items__aside-main-body-item">#}
-                                        {#<label>SELECT A MAKE</label>#}
+                                        {#<label>Marque</label>#}
                                         {#<div>#}
                                             {#<select name="select1" class="m-select">#}
                                                 {#<option value="" selected="">Any Make</option>#}
@@ -74,7 +88,7 @@
                                         {#</div>#}
                                     {#</div>#}
                                     {#<div class="b-items__aside-main-body-item">#}
-                                        {#<label>SELECT A MODEL</label>#}
+                                        {#<label>Model</label>#}
                                         {#<div>#}
                                             {#<select name="select1" class="m-select">#}
                                                 {#<option value="" selected="">Any Make</option>#}
@@ -82,14 +96,9 @@
                                             {#<span class="fa fa-caret-down"></span>#}
                                         {#</div>#}
                                     {#</div>#}
+
                                     {#<div class="b-items__aside-main-body-item">#}
-                                        {#<label>PRICE RANGE</label>#}
-                                        {#<div class="slider"></div>#}
-                                        {#<input type="hidden" name="min" value="100" class="j-min" />#}
-                                        {#<input type="hidden" name="max" value="1000" class="j-max" />#}
-                                    {#</div>#}
-                                    {#<div class="b-items__aside-main-body-item">#}
-                                        {#<label>VEHICLE TYPE</label>#}
+                                        {#<label>Type</label>#}
                                         {#<div>#}
                                             {#<select name="select1" class="m-select">#}
                                                 {#<option value="" selected="">Any Type</option>#}
@@ -98,7 +107,7 @@
                                         {#</div>#}
                                     {#</div>#}
                                     {#<div class="b-items__aside-main-body-item">#}
-                                        {#<label>VEHICLE STATUS</label>#}
+                                        {#<label>Etat</label>#}
                                         {#<div>#}
                                             {#<select name="select1" class="m-select">#}
                                                 {#<option value="" selected="">Any Status</option>#}
@@ -106,19 +115,11 @@
                                             {#<span class="fa fa-caret-down"></span>#}
                                         {#</div>#}
                                     {#</div>#}
-                                    {#<div class="b-items__aside-main-body-item">#}
-                                        {#<label>FUEL TYPE</label>#}
-                                        {#<div>#}
-                                            {#<select name="select1" class="m-select">#}
-                                                {#<option value="" selected="">All Fuel Types</option>#}
-                                            {#</select>#}
-                                            {#<span class="fa fa-caret-down"></span>#}
-                                        {#</div>#}
-                                    {#</div>#}
+
                                 {#</div>#}
                                 {#<footer class="b-items__aside-main-footer">#}
                                     {#<button type="submit" class="btn m-btn">FILTER VEHICLES<span class="fa fa-angle-right"></span></button><br />#}
-                                    {#<a href="">RESET ALL FILTERS</a>#}
+
                                 {#</footer>#}
                             {#</form>#}
                         {#</div>#}
@@ -138,6 +139,7 @@
                     {#</aside>#}
                 {#</div>#}
             </div>
+
 
         </div>
     </section><!--b-items-->

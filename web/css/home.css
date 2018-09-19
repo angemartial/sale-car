@@ -495,8 +495,10 @@ a.m-langLink{
    text-transform: uppercase;
 }
 
-.m-firstSelects{
+.m-firstSelects {
+
     overflow: hidden;
+
 }
 
 .b-search__main-form label{
@@ -1025,15 +1027,18 @@ a.m-langLink{
     line-height:1;
 }
 
-.b-asks__first{
-    padding: 35px 0 35px 30px;
+.b-asks__first {
+    padding: 35px;
     position: relative;
+    margin: 0;
 }
 
-.b-asks__first-info h2{
+.b-asks__first-info h2 {
     font: 700 24px 'Open Sans',sans-serif;
     margin: 0 0 10px 0;
     text-transform: uppercase;
+    text-decoration: underline;
+    text-align: center;
 }
 
 .b-asks__first-info{

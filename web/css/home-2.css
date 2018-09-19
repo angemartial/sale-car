@@ -462,15 +462,18 @@ header.header_top-bar a:hover {
 
 
 /* Asks */
-.m-home .b-asks{
-    padding: 90px 0 100px 0;
+.m-home .b-asks {
+    padding: 40px 0 40px 0;
     position: relative;
     border-bottom: 1px solid #eeeeee;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(238, 238, 238);
     text-align: center;
 }
 
 .m-home .b-asks:after{
-    background: url(../images/elements/chevron-downHome.png) center no-repeat;
+    /*background: url(../images/elements/chevron-downHome.png) center no-repeat;*/
     width: 100%;
     height: 12px;
     content: '';
@@ -560,4 +563,14 @@ header.header_top-bar a:hover {
 .find_home-box .b-search__main-form p {
     color: white;
     margin-bottom: 2rem;
+}
+
+.b-asks__first.main1 {
+    background-color: #f76d2b;
+}
+p.b-asks__call a {
+    color: #f76d2b;
+}
+p.b-asks__call {
+    color: black;
 }
