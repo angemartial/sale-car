@@ -79,7 +79,7 @@
                 {% for vehicle in vehicles %}
                     <div>
                         <div class="b-featured__item " data-wow-delay="0.3s">
-                            <a href="#">
+                            <a href="{{ path('details_car', { id: vehicle.id }) }}">
                                 <img src="{{ asset('uploads/' ~ vehicle.images[0]) }}" alt="" />
                                 <span class=""></span>
                             </a>
