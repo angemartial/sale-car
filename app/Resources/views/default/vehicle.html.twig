@@ -14,19 +14,22 @@
                     <div class="b-items__cars">
                         {% for vehicle in vehicles %}
                         <div class="b-items__cars-one">
+                            <a href="{{ path('details_car' , { id: vehicle.id }) }}">
                             <div class="b-items__cars-one-img">
-                                <img src="{{ asset('uploads/' ~ vehicle.images[0]) }}" alt='dodge'/>
+
+                                    <img src="{{ asset('uploads/' ~ vehicle.images[0]) }}" alt='dodge'/>
                                 {#<a data-toggle="modal" data-target="#myModal" href="#" class="b-items__cars-one-img-video"><span class="fa fa-film"></span>VIDEO</a>#}
                                 {#<span class="b-items__cars-one-img-type ">PREMIUM</span>#}
                                 {#<form action="/" method="post">#}
                                     {#<input type="checkbox" name="check1" id='check1'/>#}
 
                                 {#</form>#}
+
                             </div>
 
                             <div class="b-items__cars-one-info">
                                 <header class="b-items__cars-one-info-header s-lineDownLeft">
-                                    <h2>{{ vehicle.brand.title }} {{ vehicle.model }}</h2>
+                                    <h2><a href="{{ path('details_car' , { id: vehicle.id }) }}">{{ vehicle.brand.title }} {{ vehicle.model }}</a></h2>
                                     <span>{{ vehicle.price | number_format(0, ',', ' ')}} FCFA</span>
                                 </header>
                                 <p>
@@ -43,7 +46,7 @@
                                         <a href="#">{{ vehicle.energy.title }}</a>
                                     </div>
                                     <a href="{{ path('details_car' , { id: vehicle.id }) }}" class="btn m-btn">Plus d'infos<span class="fa fa-angle-right"></span></a>
-                                </div>
+                            </div>
                             </div>
                         {% else %}
                             <div class="col-md-4 col-sm-6 col-xs-12">
@@ -52,6 +55,7 @@
                                 </p>
 
                             </div>
+                            </a>
 
                         </div>
                         {% endfor %}

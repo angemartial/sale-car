@@ -27,11 +27,12 @@
 /* Search */
 .m-home .b-search {
     /* margin-top: 0; */
-    height: 320px;
+    height: auto;
     background: transparent;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 50%;
+    right: 7rem;
+    transform: translateY(-50%);
     /* width: 55rem; */
     /* height: 30rem; */
     /* padding-bottom: 0.1rem; */
@@ -51,7 +52,7 @@ section.b-slider {
     box-shadow: none;
     padding: 1rem;
     z-index: auto;
-    max-width: 500px;
+    max-width: 400px;
 }
 .m-home .b-search .container {
     width: 100%;
@@ -142,10 +143,11 @@ section.b-slider {
     transform: translate(-50%, -50%);
 }
 .b-items__cars-one-img > img {
-    width: 100%;
-    margin-top: 10px;
-    height: auto;
-}
+     width: 100%;
+     margin-top: 10px;
+     height: auto;
+ }
+
 .m-home .b-featured__item h5.a{
     color: #000;
 }
@@ -470,6 +472,10 @@ header.header_top-bar a:hover {
     border-bottom-style: solid;
     border-bottom-color: rgb(238, 238, 238);
     text-align: center;
+}
+.b-items__cars-one-info-header h2 a {
+    color: inherit;
+    text-decoration: none;
 }
 
 .m-home .b-asks:after{

@@ -48,8 +48,9 @@
                     <div class="b-asks__first ">
 
                         <div class="b-asks__first-info">
+                            <a href="https://www.autoscout24.fr/">
                                 <h2>AUTOSCOUT24.FR</h2>
-
+                            </a>
                         </div>
 
                     </div>
@@ -58,15 +59,16 @@
                     <div class="b-asks__first m-second ">
 
                         <div class="b-asks__first-info">
+                            <a href="https://www.mobile.de/">
                             <h2>MOBILE.DE</h2>
-
+                            </a>
                         </div>
 
                     </div>
                 </div>
                 <div class="col-xs-12">
-                    <p class="b-asks__call ">Choisissez sur les sites européens <a href="#">autoscout24.fr</a> et <a
-                                href="#">mobile.de</a>le véhicule que vous souhaitez importer, nous vérifions sur place l'état du véhicule et nous vous transmettrons
+                    <p class="b-asks__call ">Choisissez sur les sites européens <a href="https://www.autoscout24.fr/">autoscout24.fr</a> et <a
+                                href="https://www.mobile.de/">mobile.de</a>le véhicule que vous souhaitez importer, nous vérifions sur place l'état du véhicule et nous vous transmettrons
                     toutes les informations utiles pour un rapport détaillé, nous vous garantissons l'arrivée de votre véhicule jusqu'à son arrivée au de votre choix.</p>
                 </div>
             </div>
@@ -87,14 +89,14 @@
                                 {{ vehicle.price | number_format(0, ',', ' ') }} FCFA
                             </div>
                             {#<div class="clearfix"></div>#}
-                            <h5><a href="#">{{ vehicle.brand.title }}  {{ vehicle.model }}</a></h5>
+                            <h5><a href="{{ path('details_car', { id: vehicle.id }) }}">{{ vehicle.brand.title }}  {{ vehicle.model }}</a></h5>
                             <div class="b-featured__item-count"><span class="fa fa-tachometer"></span>{{ vehicle.kilometers }} Km</div>
                             <div class="b-featured__item-links">
-                                <a href="#">{{ vehicle.state.title }}</a>
-                                <a href="#">{{ vehicle.year }}</a>
-                                <a href="#">{{ vehicle.Transmission.title }}</a>
-                                <a href="#">{{ vehicle.exteriorColour }}</a>
-                                <a href="#">{{ vehicle.Energy.title }}</a>
+                                <a href="{{ path('details_car', { id: vehicle.id }) }}">{{ vehicle.state.title }}</a>
+                                <a href="{{ path('details_car', { id: vehicle.id }) }}">{{ vehicle.year }}</a>
+                                <a href="{{ path('details_car', { id: vehicle.id }) }}">{{ vehicle.Transmission.title }}</a>
+                                <a href="{{ path('details_car', { id: vehicle.id }) }}">{{ vehicle.exteriorColour }}</a>
+                                <a href="{{ path('details_car', { id: vehicle.id }) }}">{{ vehicle.Energy.title }}</a>
                             </div>
                         </div>
                     </div>

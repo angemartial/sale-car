@@ -248,10 +248,10 @@ a.m-langLink{
 }
 
 .b-slider__info {
-
     text-align: left;
     top: 20%;
-    left: 17rem;
+    left: 7rem;
+    right: auto;
 }
 
 .b-slider__info h3{
