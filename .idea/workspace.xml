@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b640e6f-7848-4bd4-b217-9caeef175b13" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/cls-ext-1.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/cls-ext-2.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/cls-int-1.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/cls.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/cls350.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/cls350_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/cls350_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/cls350_3.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/cls350_33.jpeg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/details-car.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/details-car.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Vehicle.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Vehicle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/animate.css" afterPath="$PROJECT_DIR$/web/css/animate.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/blog.css" afterPath="$PROJECT_DIR$/web/css/blog.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/colors-demo.css" afterPath="$PROJECT_DIR$/web/css/colors-demo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/colors.css" afterPath="$PROJECT_DIR$/web/css/colors.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/compare.css" afterPath="$PROJECT_DIR$/web/css/compare.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/detail.css" afterPath="$PROJECT_DIR$/web/css/detail.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/doc.css" afterPath="$PROJECT_DIR$/web/css/doc.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/home-2.css" afterPath="$PROJECT_DIR$/web/css/home-2.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/home.css" afterPath="$PROJECT_DIR$/web/css/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/listings.css" afterPath="$PROJECT_DIR$/web/css/listings.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/master.css" afterPath="$PROJECT_DIR$/web/css/master.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/pages.css" afterPath="$PROJECT_DIR$/web/css/pages.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/responsive.css" afterPath="$PROJECT_DIR$/web/css/responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/site-colors.css" afterPath="$PROJECT_DIR$/web/css/site-colors.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/start-page.css" afterPath="$PROJECT_DIR$/web/css/start-page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/submits.css" afterPath="$PROJECT_DIR$/web/css/submits.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/theme.css" afterPath="$PROJECT_DIR$/web/css/theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2fb736c0-8506-48a2-ae4b-1328ecca41a5.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/2fb736c0-8506-48a2-ae4b-1328ecca41a5.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -97,11 +67,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details-car.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="details-car.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/details-car.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-576">
               <caret line="56" column="46" lean-forward="false" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="saleauto.vehicle_comfort" pinned="false" current-in-tab="true">
+        <entry file="dbDummy://dbtable:/dc61115d/2fb736c0-8506-48a2-ae4b-1328ecca41a5/saleauto.vehicle_comfort">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="saleauto.vehicle_media" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/dc61115d/2fb736c0-8506-48a2-ae4b-1328ecca41a5/saleauto.vehicle_media">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="saleauto.vehicle_security" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/dc61115d/2fb736c0-8506-48a2-ae4b-1328ecca41a5/saleauto.vehicle_security">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -704,12 +719,12 @@
       <workItem from="1537456374262" duration="2555000" />
       <workItem from="1537630316427" duration="6626000" />
       <workItem from="1539091578175" duration="2131000" />
-      <workItem from="1539555833498" duration="8034000" />
+      <workItem from="1539555833498" duration="8627000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186167000" />
+    <option name="totallyTimeSpent" value="186760000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -727,7 +742,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23600605" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -773,25 +788,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/uploads/title-bg1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/VehicleType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="35" column="10" lean-forward="false" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/switcher/css/color2.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="386" column="25" lean-forward="false" selection-start-line="386" selection-start-column="25" selection-end-line="386" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1161,6 +1157,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-576">
           <caret line="56" column="46" lean-forward="false" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/dc61115d/2fb736c0-8506-48a2-ae4b-1328ecca41a5/saleauto.vehicle_media">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/dc61115d/2fb736c0-8506-48a2-ae4b-1328ecca41a5/saleauto.vehicle_security">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/dc61115d/2fb736c0-8506-48a2-ae4b-1328ecca41a5/saleauto.vehicle_comfort">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
