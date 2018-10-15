@@ -11,7 +11,7 @@
                     <img src="{{ asset('uploads/' ~ image ) }}" alt="sliderImg" />
                     <div class="container">
                         <div class="carousel-caption b-slider__info">
-                            <h3>Touvez un véhicule</h3>
+                            <h3>Trouvez un véhicule</h3>
                             <h2>{{ vehicle.brand.title }} {{ vehicle.model }}</h2>
                             <p>Model {{ vehicle.year }} <span>{{ vehicle.price| number_format(0, ',', ' ') }} CFA</span></p>
                             <a class="btn m-btn" href="{{ path('details_car', { id: vehicle.id }) }}">Voir details<span class="fa fa-angle-right"></span></a>
@@ -30,10 +30,10 @@
         </div>
         <div class="b-search">
 
-                <div class="b-search__main">
-                    <h2 class="s-title">Rechercher un vehicule</h2>
-                    {{ render(controller('AppBundle\\Controller\\DefaultController:vehicleSearchAction')) }}
-                </div>
+                {#<div class="b-search__main">#}
+                    {#<h2 class="s-title">Rechercher un vehicule</h2>#}
+                    {#{{ render(controller('AppBundle\\Controller\\DefaultController:vehicleSearchAction')) }}#}
+                {#</div>#}
 
         </div><!--b-search-->
     </section><!--b-slider-->
@@ -59,8 +59,8 @@
                     <div class="b-asks__first m-second ">
 
                         <div class="b-asks__first-info">
-                            <a href="https://www.mobile.de/">
-                            <h2>MOBILE.DE</h2>
+                            <a href="https://www.automobile.fr/">
+                            <h2>AUTOMOBILE.FR</h2>
                             </a>
                         </div>
 
@@ -68,8 +68,8 @@
                 </div>
                 <div class="col-xs-12">
                     <p class="b-asks__call ">Choisissez sur les sites européens <a href="https://www.autoscout24.fr/">autoscout24.fr</a> et <a
-                                href="https://www.mobile.de/">mobile.de</a>le véhicule que vous souhaitez importer, nous vérifions sur place l'état du véhicule et nous vous transmettrons
-                    toutes les informations utiles pour un rapport détaillé, nous vous garantissons l'arrivée de votre véhicule jusqu'à son arrivée au de votre choix.</p>
+                                href="https://www.automobile.fr/">automobile.fr</a> le véhicule que vous souhaitez importer, nous vérifions sur place l'état du véhicule et nous vous transmettrons
+                    toutes les informations utiles pour un rapport détaillé, nous vous garantissons l'arrivée de votre véhicule jusqu'à son arrivée au port de votre choix.</p>
                 </div>
             </div>
         </div>

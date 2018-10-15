@@ -14,9 +14,6 @@
  - Info
  - Footer
 
-- Author:  Andrey Sokoltsov
-- Profile:	http://themeforest.net/user/andreysokoltsov
-
 -------------------------------------------------------------------*/
 /*=======================Home=======================*/
 /* Slider */
@@ -559,7 +556,7 @@ header.header_top-bar a:hover {
     padding: 2px;
 }
 .carousel-fade .item {
-    height: 400px;
+    height: 450px;
 }
 .b-search h2 {
     color: white;

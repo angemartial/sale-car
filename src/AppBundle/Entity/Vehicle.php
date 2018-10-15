@@ -68,6 +68,15 @@ class Vehicle
      */
     private $comfort;
 
+
+    /**
+     * @var Energy
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Energy")
+     */
+    private $energy;
+
+
+
      /**
      * @var State
      * @ORM\ManyToOne(targetEntity="State")
@@ -135,11 +144,6 @@ class Vehicle
     private $transmission;
 
 
-    /**
-     * @var Energy
-     * @ORM\ManyToOne(targetEntity="Energy")
-     */
-    private $energy;
 
     /**
      * @var Brand

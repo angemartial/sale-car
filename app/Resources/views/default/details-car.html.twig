@@ -51,14 +51,12 @@
                                     <div class="col-xs-2 pagerSlider pagerVertical">
                                         <div class="b-detail__main-info-images-small" id="bx-pager">
 
-                                            <a href="#" data-slide-index="{{ loop.index0 }}" class="b-detail__main-info-images-small-one">
+                                            {#<a href="#" data-slide-index="{{ loop.index0 }}" class="b-detail__main-info-images-small-one">#}
                                                 <img class="img-responsive" src="{{ asset('uploads/' ~ image ) }}" alt="" />
-                                            </a>
-
-
+                                            {#</a>#}
                                         </div>
                                     </div>
-                                         {% endfor %}
+                                     {% endfor %}
                                 </div>
                             </div>
 
@@ -92,7 +90,7 @@
                                     <div class="col-xs-4">
                                         <ul>
                                             {% for medias in vehicle.medias %}
-                                            <li><span class="fa fa-check"></span>{{ vehicle.medias.title }}</li>
+                                            <li><span class="fa fa-check"></span>{{ medias.title }}</li>
                                             {% endfor %}
 
                                         </ul>
@@ -153,9 +151,9 @@
                                         <h4 class="b-detail__main-aside-desc-title">Transmission</h4>
                                     </div>
                                     <div class="col-xs-6">
-                                        {% for transmission in vehicle.transmission %}
-                                        <p class="b-detail__main-aside-desc-value">{{ transmission.title }}</p>
-                                        {% endfor %}
+
+                                        <p class="b-detail__main-aside-desc-value">{{ vehicle.transmission.title }}</p>
+
                                     </div>
                                 </div>
                                 <div class="row">
@@ -187,9 +185,9 @@
                                         <h4 class="b-detail__main-aside-desc-title">Energie</h4>
                                     </div>
                                     <div class="col-xs-6">
-                                        {% for energy in vehicle.energy %}
-                                        <p class="b-detail__main-aside-desc-value">{{ energy.title }}</p>
-                                        {% endfor %}
+
+                                        <p class="b-detail__main-aside-desc-value">{{ vehicle.energy.title }}</p>
+
                                     </div>
                                 </div>
 
